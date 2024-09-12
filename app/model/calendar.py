@@ -28,8 +28,7 @@ class Event:
     id: str = field(default_factory=generate_unique_id)
 
     def add_reminder(self, date_time: datetime, type_: str = Reminder.EMAIL):
-        reminder = Reminder(date_time=date_time, type=type_)
-        self.reminders.append(reminder)
+        pass
 
     def delete_reminder(self, reminder_index: int):
         if 0 <= reminder_index < len(self.reminders):
@@ -42,3 +41,14 @@ class Event:
                 f"Event title: {self.title}\n"
                 f"Description: {self.description}\n"
                 f"Time: {self.start_at} - {self.end_at}")
+
+class Day:
+
+    def __init__(self, date_: date):
+        date_: date = date_
+        slots: dict[time, str | None] = {}
+
+    def _init_slots(self):
+        pass
+
+
