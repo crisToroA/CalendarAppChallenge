@@ -8,9 +8,9 @@ from app.services.util import generate_unique_id, date_lower_than_today_error, e
 
 @dataclass
 class Reminder:
+    EMAIL: ClassVar[str] = "email"
+    SYSTEM: ClassVar[str] = "system"
     date_time: datetime
-    EMAIL: str = "email"
-    SYSTEM: str = "system"
     type: str = EMAIL
 
     def __str__(self) -> str:
@@ -42,6 +42,7 @@ class Event:
                 f"Description: {self.description}\n"
                 f"Time: {self.start_at} - {self.end_at}")
 
+
 class Day:
 
     def __init__(self, date_: date):
@@ -50,5 +51,3 @@ class Day:
 
     def _init_slots(self):
         pass
-
-
